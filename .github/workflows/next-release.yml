@@ -37,7 +37,7 @@ jobs:
     name: Linux x86_64 (manylinux_2_34)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
 
@@ -68,7 +68,7 @@ jobs:
           '
           sudo chown -R "$USER:$USER" work/dist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: cbc-linux-x86_64-next
           path: work/dist/cbc-linux-x86_64-next.tar.gz
@@ -77,7 +77,7 @@ jobs:
     name: Linux aarch64 (manylinux_2_34)
     runs-on: ubuntu-24.04-arm
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
 
@@ -108,7 +108,7 @@ jobs:
           '
           sudo chown -R "$USER:$USER" work/dist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: cbc-linux-aarch64-next
           path: work/dist/cbc-linux-aarch64-next.tar.gz
@@ -117,7 +117,7 @@ jobs:
     name: macOS arm64 (Apple Silicon)
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
 
@@ -148,7 +148,7 @@ jobs:
             --lapack --amd --zlib --no-bz2 --no-nauty
           ./package --prefix="$PWD/install" --name=cbc-macos-arm64-next --out=dist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: cbc-macos-arm64-next
           path: work/dist/cbc-macos-arm64-next.tar.gz
@@ -188,7 +188,7 @@ jobs:
     #     image (`pkgconf`) regardless of architecture.
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
 
@@ -215,7 +215,7 @@ jobs:
           ./package --prefix="$PWD/install" --name=cbc-macos-x86_64-next --out=dist
           ROSETTA
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: cbc-macos-x86_64-next
           path: work/dist/cbc-macos-x86_64-next.tar.gz
@@ -235,7 +235,7 @@ jobs:
       run:
         shell: C:\msys64\usr\bin\bash.exe -l {0}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
 
@@ -270,7 +270,7 @@ jobs:
             --lapack --amd --zlib --no-bz2 --no-nauty
           ./package --prefix="$PWD/install" --name=cbc-windows-x86_64-next --out=dist
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: cbc-windows-x86_64-next
           path: work/dist/cbc-windows-x86_64-next.zip
