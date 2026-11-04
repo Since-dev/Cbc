@@ -60,7 +60,7 @@ jobs:
     name: Linux x86_64 (manylinux_2_34)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
           submodules: true   # fetches test/mip-sanity-data
@@ -150,7 +150,7 @@ jobs:
 
       - name: Upload logs/solutions on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: sanity-test-results-linux-x86_64
           path: work/Cbc/test/sanity-results/
@@ -159,7 +159,7 @@ jobs:
     name: Linux aarch64 (manylinux_2_34)
     runs-on: ubuntu-24.04-arm
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
           submodules: true   # fetches test/mip-sanity-data
@@ -201,7 +201,7 @@ jobs:
 
       - name: Upload logs/solutions on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: sanity-test-results-linux-aarch64
           path: work/Cbc/test/sanity-results/
@@ -210,7 +210,7 @@ jobs:
     name: macOS arm64 (Apple Silicon)
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
           submodules: true   # fetches test/mip-sanity-data
@@ -268,7 +268,7 @@ jobs:
 
       - name: Upload logs/solutions on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: sanity-test-results-macos-arm64
           path: work/Cbc/test/sanity-results/
@@ -304,7 +304,7 @@ jobs:
       run:
         shell: C:\msys64\usr\bin\bash.exe -l {0}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           path: work/Cbc
           submodules: true   # fetches test/mip-sanity-data
@@ -360,7 +360,7 @@ jobs:
 
       - name: Upload logs/solutions on failure
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: sanity-test-results-windows-x86_64
           path: work/Cbc/test/sanity-results/
